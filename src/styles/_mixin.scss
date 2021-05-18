@@ -1,0 +1,11 @@
+@mixin arrowStyleList($imgUrl) {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: -11px;
+        background: url($imgUrl) no-repeat;
+        width: 18px;
+        height: 18px;
+    }
+}

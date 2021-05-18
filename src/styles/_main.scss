@@ -1,0 +1,244 @@
+@import './variables';
+@import './helper/reset';
+@import './utils';
+@import './mixin';
+@import 'swiper/swiper-bundle.css';
+
+/*============================
+    Header Section
+=============================*/
+header {
+    background: $HEADER_BG;
+
+    // Navbar
+    .navbar {
+        width: 100%;
+        z-index: 9999;
+        .navbar-brand-logo {
+            width: 130px;
+            height: auto;
+        }
+        .navbar-toggler {
+            border: none;
+        }
+        .nav-item .nav-link {
+            &.active,
+            &:focus,
+            &:hover {
+                color: $danger;
+            }
+        }
+    }
+    .navbar-change {
+        background: $gray-100;
+        padding: 0 auto !important;
+        transition: background 0.4s ease-in-out;
+    }
+    .navbar-gray {
+        background: $gray-100;
+    }
+
+    // Banner
+    #banner {
+        padding-top: 10rem;
+        padding-bottom: 3rem;
+
+        button {
+            @include iconSVG($gray-500);
+        }
+    }
+}
+
+/*============================
+    Features Section
+=============================*/
+// Features Text
+.features-text > p {
+    font-size: 1.7rem;
+    color: $FEATURE_TEXT_COLOR;
+}
+
+// Features Card
+.features-card {
+    .img-fluid {
+        width: $FEATURE_CARD_SIZE;
+        height: $FEATURE_CARD_SIZE;
+        margin: 0 auto;
+    }
+
+    .card {
+        border-radius: 20px;
+        height: 100%;
+    }
+
+    p {
+        font-size: 1.11rem;
+    }
+}
+
+/*============================
+    Details Section
+=============================*/
+.instant-result-list li {
+    position: relative;
+    @include arrowStyleList('../assets/angle-right-solid.svg');
+}
+
+/*============================
+    Reviews Section
+=============================*/
+// Counter
+.counter-value {
+    font-weight: bold;
+    font-size: 2.8rem;
+}
+
+.counter-label {
+    font-size: 1rem;
+    color: $gray-600;
+}
+
+// Reviews Slider
+.swiper-container {
+    cursor: grabbing;
+}
+
+.slider-img {
+    width: $SLIDER_IMG_SIZE;
+    height: $SLIDER_IMG_SIZE;
+    border-radius: 50%;
+}
+
+.testimonial-text {
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.testimonial-author {
+    font-weight: 600;
+}
+
+/*============================
+    Pricing Section
+=============================*/
+#pricing {
+    .price-bg {
+        background: $PRICE_BG_COLOR,
+            url('../assets/pricing-background.jpg') no-repeat center;
+        background-size: cover;
+        width: 100%;
+    }
+
+    .price-info {
+        max-width: 767px;
+        margin: 0 auto;
+    }
+
+    .card {
+        position: relative;
+        border: 1px solid $PRICE_CARD_BORDER_COLOR;
+        max-width: 330px;
+        height: auto;
+        margin: 0 auto 2rem;
+        border-radius: 20px;
+
+        button {
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+    }
+
+    .price {
+        position: relative;
+        color: $black;
+        font-size: 5rem;
+
+        &::before {
+            content: '$';
+            position: absolute;
+            top: 30%;
+            font-size: 2rem;
+            transform: translateX(-20px);
+        }
+    }
+
+    ul li {
+        position: relative;
+        color: $gray-600;
+        margin: 10px 0 0 15px;
+        @include arrowStyleList('../assets/angle-right-solid.svg');
+    }
+}
+
+/*============================
+    Download Section
+=============================*/
+#download {
+    position: relative;
+
+    .download-text-bg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -10;
+    }
+
+    p {
+        font-size: 2rem;
+        line-height: 1.4;
+        color: $black;
+    }
+
+    button {
+        @include iconSVG($white);
+    }
+}
+
+/*============================
+    Footer Section
+=============================*/
+#footer {
+    background: $FOOTER_BG;
+    $icon_size: 50px;
+
+    a:not([class='f-text-link']) {
+        text-decoration: none;
+        font-size: 0.9rem;
+        color: $gray-600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .f-text {
+        max-width: 600px;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        color: $black;
+        margin: 0 auto;
+    }
+
+    .f-icon-group img {
+        background: $white;
+        width: $icon_size;
+        height: $icon_size;
+        padding: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            background: $gray-200;
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+    #pricing .card {
+        max-width: 100%;
+        width: 320px;
+        margin: 0 auto;
+    }
+}
